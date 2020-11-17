@@ -16,6 +16,9 @@ export default function App() {
   const [isAddMode, setIsAddMode] = useState(false);
 
   const addGoalHandler = (enteredGoal) => {
+    if (enteredGoal.length === 0) {
+      return;
+    }
     setcourseGoal([
       ...courseGoal,
       { id: Math.random().toString(), value: enteredGoal },
@@ -58,6 +61,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   screen: {
+    minHeight: '100%',
+    backgroundColor: '#5b5b',
     padding: 50,
   },
 });
